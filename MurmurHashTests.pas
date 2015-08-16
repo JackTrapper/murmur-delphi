@@ -265,6 +265,6 @@ begin
 end;
 
 initialization
-	TestFramework.RegisterTest('Murmur3', TMurmur3Tests.Suite);
+	TestFramework.RegisterTest('MurmurHash3', TMurmur3Tests.Suite);
 
 end.

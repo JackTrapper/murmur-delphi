@@ -1,4 +1,4 @@
-unit Murmur;
+unit MurmurHash;
 
 interface
 
@@ -7,7 +7,6 @@ type
 	UnicodeString = WideString;
 	UInt64 = Int64;
 {$ENDIF}
-
 
 type
 	TMurmur3 = class(TObject)
@@ -20,7 +19,6 @@ type
 	public
 		class function HashData32(const Key; KeyLen: LongWord; const Seed: LongWord): LongWord;
 		class function HashString32(const Key: UnicodeString; const Seed: LongWord): LongWord;
-
 	end;
 
 implementation
