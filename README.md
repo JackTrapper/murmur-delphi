@@ -5,9 +5,9 @@ MurmurHash is a fast, non-cryptographic, hash, suitable for hash tables.
 
 It comes in three variants:
 
-- hash result: 32 bits
-- hash result:128 bits (x86 optimized)
-- hash result 128 bits (x64 optimized)
+- hash result of 32 bits
+- hash result of 128 bits, optimized for x86 architecture
+- hash result of 128 bits, optimized for x64 architecture
 
 
 Sample Usage
