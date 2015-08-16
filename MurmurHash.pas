@@ -27,7 +27,7 @@ implementation
 
 uses
 	SysUtils, Windows
-{$IFDEF UnitTests}, MurmurTests{$ENDIF};
+{$IFDEF UnitTests}, MurmurHashTests{$ENDIF};
 
 function LRot32(X: LongWord; c: Byte): LongWord;
 begin
