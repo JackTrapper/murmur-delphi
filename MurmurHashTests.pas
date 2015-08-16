@@ -1,4 +1,4 @@
-unit MurmurTests;
+unit MurmurHashTests;
 
 interface
 
@@ -105,7 +105,7 @@ begin
 	if not QueryPerformanceCounter({out}t2) then
 		t2 := 0;
 
-	Status('Test completed in '+FloatToStrF((t2-t1)/FFreq*1000000, ffFixed, 15, 3)+' µs');
+	Status('Test completed in '+FloatToStrF((t2-t1)/FFreq*1000000, ffFixed, 15, 3)+' Âµs');
 
 	CheckEquals(Expected, Actual, 'Murmur3_32 SMHasher test');
 end;
@@ -128,7 +128,7 @@ var
 
 		if not QueryPerformanceCounter(t2) then t2 := 0;
 
-		Status('Hashed '+KeyHexString+' in '+FloatToStrF((t2-t1)/FFreq*1000000, ffFixed, 15, 3)+' µs');
+		Status('Hashed '+KeyHexString+' in '+FloatToStrF((t2-t1)/FFreq*1000000, ffFixed, 15, 3)+' Âµs');
 
 		CheckEquals(Expected, Actual, Format('Key: %s. Seed: 0x%.8x', [KeyHexString, Seed]));
 	end;
@@ -154,7 +154,7 @@ var
 			else
 				safeValue := safeValue + Value[i];
 		end;
-		Status('Hashed "'+safeValue+'" in '+FloatToStrF((t2-t1)/FFreq*1000000, ffFixed, 15, 3)+' µs');
+		Status('Hashed "'+safeValue+'" in '+FloatToStrF((t2-t1)/FFreq*1000000, ffFixed, 15, 3)+' Âµs');
 
 		CheckEquals(Expected, Actual, Format('Key: %s. Seed: 0x%.8x', [safeValue, Seed]));
 	end;
@@ -243,10 +243,10 @@ begin
 	//#7) 1000 bytes of zeros
 	TestString(StringOfChar('0', 1000), 0, 4049757186);
 
-	//#8) 1000 bytes of 0x41 ‘A’
+	//#8) 1000 bytes of 0x41 â€˜Aâ€™
 	TestString(StringOfChar('A', 1000), 0, 296104456);
 
-	//#9) 1005 bytes of 0x55 ‘U’
+	//#9) 1005 bytes of 0x55 â€˜Uâ€™
 	TestString(StringOfChar('U', 1005), 0, 3970215021);
 end;
 
